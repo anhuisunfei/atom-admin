@@ -2,7 +2,7 @@ import * as types from './mutation-types'
 
 export const toggleSidebar = ({
   commit
-}, opened) => commit(types.toggleSidebar.opened)
+}, opened) => commit(types.TOGGLE_SIDEBAR, opened)
 
 export const toggleDevice = ({
   commit

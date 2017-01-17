@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import elements from './elements'
 Vue.use(Router)
 
 export default new Router({
@@ -8,9 +9,9 @@ export default new Router({
   scrollBehavior: () => ({
     y: 0
   }),
-  routers: [{
+  routes: [{
     name: 'Home',
     path: '/',
     component: require('../views/Home')
-  }]
+  }, elements]
 })

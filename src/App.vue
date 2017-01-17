@@ -1,8 +1,8 @@
 <template>
 <div id="app">
   <nprogress-container></nprogress-container>
-  <navbar></navbar>
-  <sidebar></sidebar>
+  <navbar :show="true"></navbar>
+  <sidebar :show="sidebar.opened && !sidebar.hidden"></sidebar>
   <app-main></app-main>
   <footerbar></footerbar>
 </div>
@@ -17,6 +17,10 @@ import {
   Navbar,
   Sidebar
 } from './components/layout'
+import {
+  mapGetters,
+  mapActions
+} from 'vuex'
 
 export default {
   name: 'app',
@@ -27,12 +31,40 @@ export default {
     Navbar,
     Sidebar,
     NprogressContainer
+  },
+  computed: mapGetters({
+    sidebar: 'sidebar'
+  }),
+  methods: mapActions([
+    'toggleDevice',
+    'toggleSidebar'
+  ]),
+  beforeMount () {
+    const {
+      body
+    } = document
+    const WIDTH = 768
+    const RATIO = 3
+
+    const handler = () => {
+      if (!document.hidden) {
+        let rect = body.getBoundingClientRect()
+        let isMobile = rect.width - RATIO < WIDTH
+        console.log(rect.width)
+        this.toggleDevice(isMobile ? 'mobile' : 'other')
+        this.toggleSidebar(!isMobile)
+      }
+    }
+
+    // document.addEventListener('visibilitychange', handler)
+    // window.addEventListener('DOMContentLoaded', handler)
+    window.addEventListener('resize', handler)
   }
+
 }
 </script>
 
-<style lang="scss">
-@import '~animate.css';
+<style lang="scss">@import '~animate.css';
 .animated {
     animation-duration: 0.377s;
 }
