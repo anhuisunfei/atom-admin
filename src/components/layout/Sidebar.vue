@@ -1,19 +1,20 @@
 <template>
 <aside class="app-sidebar animated" :class="{slideInLeft: show, slideOutLeft: !show}">
-
-  <el-menu  theme="dark" default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :router="true">
+  <el-menu theme="dark" default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :router="true">
+    <el-menu-item index="/">
+      <i class="fa fa-dashboard"></i>Dashboard
+    </el-menu-item>
     <el-submenu index="1">
-      <template slot="title"><i class="el-icon-message"></i>Elements
+      <template slot="title">
+        <i class="fa fa-fire"></i>Elements
 </template>
 
-        <el-menu-item index="/">选项1</el-menu-item>
-        <el-menu-item index="/buttons">buttons</el-menu-item>
+        <el-menu-item index="/buttons">Buttons</el-menu-item>
+          <el-menu-item index="/tables">Tables</el-menu-item>
 </template>
-
-  </el-menu>
+</el-menu>
 </aside>
 </template>
-
 
 <script>
 export default {
@@ -21,16 +22,15 @@ export default {
     show: Boolean
   },
   methods: {
-    handleOpen (key, keyPath) {
+    handleOpen(key, keyPath) {
       console.log(key, keyPath)
     },
-    handleClose (key, keyPath) {
+    handleClose(key, keyPath) {
       console.log(key, keyPath)
     }
   }
 }
 </script>
-
 <style lang="scss">
 .app-sidebar {
     width: 224px;
@@ -42,5 +42,13 @@ export default {
     background-color: #282828;
     height: 100%;
     position: fixed;
+}
+.el-submenu [class^=fa] {
+    vertical-align: baseline;
+    margin-right: 10px;
+}
+.el-menu-item [class^=fa] {
+    vertical-align: baseline;
+    margin-right: 10px;
 }
 </style>

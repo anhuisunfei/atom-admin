@@ -13,11 +13,11 @@ const state = {
   }
 }
 const mutations = {
-  [types.TOGGLE_DEVICE] (state, device) {
+  [types.TOGGLE_DEVICE](state, device) {
     state.device.isMobile = device === 'moble'
     state.device.isTablet = device === 'tablet'
   },
-  [types.TOGGLE_SIDEBAR] (state, opened) {
+  [types.TOGGLE_SIDEBAR](state, opened) {
     state.sidebar.opened = opened
   }
 }

@@ -7,7 +7,6 @@
   <footerbar></footerbar>
 </div>
 </template>
-
 <script>
 import NprogressContainer from 'vue-nprogress/src/NprogressContainer'
 import {
@@ -39,7 +38,7 @@ export default {
     'toggleDevice',
     'toggleSidebar'
   ]),
-  beforeMount () {
+  beforeMount() {
     const {
       body
     } = document
@@ -63,18 +62,17 @@ export default {
 
 }
 </script>
-
 <style lang="scss">@import '~animate.css';
 .animated {
     animation-duration: 0.377s;
 }
+
 #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-
 }
 
 body {

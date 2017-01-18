@@ -10,7 +10,7 @@ export default new Router({
     y: 0
   }),
   routes: [{
-    name: 'Home',
+    name: 'Dashboard',
     path: '/',
     component: require('../views/Home')
   }, elements]
