@@ -31,11 +31,11 @@ export default {
  <style lang="scss">
 .app-main {
     top: 55px;
-    left: 224px;
+    margin-left: 224px;
     bottom: 0;
     right: 0;
     overflow: hidden;
-    position: absolute;
+    position: relative;
     width: auto;
     background-color: #f5f5f5;
     .layout-content {
@@ -59,6 +59,6 @@ export default {
     }
 }
 .sidebarHide {
-    left: 0;
+    margin-left: 0;
 }
 </style>

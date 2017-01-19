@@ -21,6 +21,10 @@ const nprogress = new NProgress({
   parent: '.nprogress-container'
 })
 
+router.beforeEach((to, from, next) => {
+  next()
+})
+
 const app = new Vue({
   router,
   store,

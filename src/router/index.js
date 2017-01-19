@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import elements from './elements'
+import Home from '../views/Home'
 Vue.use(Router)
 
 export default new Router({
@@ -12,6 +13,9 @@ export default new Router({
   routes: [{
     name: 'Dashboard',
     path: '/',
-    component: require('../views/Home')
-  }, elements]
+    component: Home
+  }, elements, {
+    path: '*',
+    component: Home
+  }]
 })
