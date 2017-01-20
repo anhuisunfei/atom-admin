@@ -1,0 +1,37 @@
+sudo: false
+
+language: node_js
+
+node_js:
+  - "5"
+  - "6"
+
+# S: Build Lifecycle
+install:
+  - npm install
+
+
+#before_script:
+ # - npm install -g gulp
+
+script:
+  - npm run build
+  
+after_script:
+  - rm -rf ../out
+  - mkdir ../out
+  - cd ../out
+  - mkdir atom-admin
+  - cp ../atom-admin/dist atom-admin
+  - git clone "https://${GH_REF}"
+  - git config user.name "anhuisunfei"
+  - git config user.email "anhuisunfei@gmail.com"
+  - git add .
+  - git commit -m "Update docs"
+  - git push --force --quiet "https://${GH_TOKENS}@${GH_REF}" master:master
+# E: Build LifeCycle
+
+
+env:
+ global:
+   - GH_REF: github.com/anhuisunfei/anhuisunfei.github.io.git
