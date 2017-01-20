@@ -19,8 +19,11 @@ script:
   
 after_script:
   - rm -rf ../out
+  - echo '1'
   - mkdir ../out
+  - echo '2'
   - cd ../out
+  - echo '3'
   - mkdir atom-admin
   - cp ../atom-admin/dist atom-admin
   - git clone "https://${GH_REF}"
