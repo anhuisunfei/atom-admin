@@ -1,7 +1,7 @@
 <template>
 <footer>
   <div>
-    123
+    1231
   </div>
 </footer>
 </template>
