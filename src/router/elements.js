@@ -1,6 +1,6 @@
 import { Components } from '../views/components'
 import { Buttons } from '../views/components/Buttons'
-import { Tables } from '../views/components/Tables.vue'
+import { Tables } from '../views/components/Tables'
 
 export default {
   path: '/elements',
