@@ -1,3 +1,7 @@
+import { Components } from '../views/components'
+import { Buttons } from '../views/components/Buttons'
+import { Tables } from '../views/components/Tables'
+
 export default {
   path: '/elements',
   name: 'Elements',
@@ -5,15 +9,15 @@ export default {
     icon: 'icon-chemistry',
     expanded: false
   },
-  component: require('../views/components'),
+  component: Components,
   children: [{
     name: 'Buttons',
     path: '/buttons',
-    component: require('../views/components/Buttons')
+    component: Buttons
   }, {
     name: 'Tables',
     path: '/tables',
-    component: require('../views/components/Tables')
+    component: Tables
   }]
 
 }
