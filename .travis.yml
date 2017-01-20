@@ -24,7 +24,7 @@ after_script:
   - git clone "https://${GH_REF}" out
   - cd out
   - mkdir atom-admin
-  - cp ../atom-admin/dist ./atom-admin
+  - cp -r ../atom-admin/dist ./atom-admin
   - git config user.name "anhuisunfei"
   - git config user.email "anhuisunfei@gmail.com"
   - git add .
