@@ -1,9 +1,11 @@
 <template>
 <footer>
+  <div>
+    123
+  </div>
 </footer>
 </template>
 
 <script>
-export default {
-}
+export default {}
 </script>
