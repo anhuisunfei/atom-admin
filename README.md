@@ -1,6 +1,6 @@
 # atom-admin
-
-> atom admin project!
+ >[Demo](http://anhuisunfei.github.io/atom-admin)
+ > atom admin project!
 
 ## Build Setup
 
