@@ -18,7 +18,7 @@ script:
   - npm run build
   
 after_script:
-  - rm -rf ../out || exit 0
+  - rm -rf ../out
   - mkdir ../out
   - cd ../out
   - mkdir atom-admin
