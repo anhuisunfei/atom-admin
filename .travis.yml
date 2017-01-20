@@ -1,1 +1,36 @@
+sudo: false
 
+language: node_js
+
+node_js:
+  - "4"
+  - "5"
+  - "6"
+
+# S: Build Lifecycle
+install:
+  - npm install
+
+
+#before_script:
+ # - npm install -g gulp
+
+script:
+  - npm run build
+  
+after_script:
+  - cd ./public
+  - git init
+  - git config user.name "lifengsofts"
+  - git config user.email "lifengsofts@gmail.com"
+  - git add .
+  - git commit -m "Update docs"
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
+# E: Build LifeCycle
+
+branches:
+  only:
+    - blog-source
+env:
+ global:
+   - GH_REF: github.com/lifengsofts/lifengsofts.github.io.git
