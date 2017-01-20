@@ -18,15 +18,13 @@ script:
   - npm run build
   
 after_script:
-  - rm -rf ../out
-  - echo '1'
-  - mkdir ../out
-  - echo '2'
-  - cd ../out
-  - echo '3'
+  - cd ../
+  - rm -rf out
+  - mkdir out 
+  - git clone "https://${GH_REF}" out
+  - cd out
   - mkdir atom-admin
   - cp ../atom-admin/dist atom-admin
-  - git clone "https://${GH_REF}"
   - git config user.name "anhuisunfei"
   - git config user.email "anhuisunfei@gmail.com"
   - git add .
